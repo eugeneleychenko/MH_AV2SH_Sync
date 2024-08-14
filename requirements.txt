@@ -2,4 +2,4 @@ streamlit
 pandas
 gql
 requests
-loadenv
+python-dotenv
