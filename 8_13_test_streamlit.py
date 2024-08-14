@@ -5,6 +5,10 @@ import json
 import logging
 import requests
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -306,7 +310,7 @@ class AtVenuDataFetcher:
         return all_data
 
 def fetch_data(start_date, end_date):
-    api_key = "live_yvYLBo32dRE9z_yCdhwU"  # Hardcoded API key
+    api_key = os.getenv("API_TOKEN")
     fetcher = AtVenuDataFetcher(api_key)
     return fetcher.fetch_all_data(start_date, end_date)
 
