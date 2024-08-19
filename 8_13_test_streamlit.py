@@ -363,7 +363,7 @@ def main():
         df['Quantity'] = -df['Sold']
         df['Reason'] = 'Nightly Sales'
         df = df[['SKU', 'Quantity', 'Location', 'Reason']]
-        df.insert(1, 'Action', 'Replace')
+        df.insert(1, 'Action', 'Change')
 
         # Get unique bands for checkboxes
         bands = df['Location'].str.split(' - ').str[0].unique()
